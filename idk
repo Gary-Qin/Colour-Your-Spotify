@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <link rel="stylesheet" href="idk.css">
+    </head>
+
+    <body>
+        <h1>Hi</h1>
+        
+        <p id="a"> hey </p>
+        <button class="button" onclick="myFunction()">Click Me!</button>
+
+        <script src="idk.js"></script>
+    </body>
+
+</html>
