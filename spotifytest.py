@@ -10,9 +10,10 @@ from spotipy.oauth2 import SpotifyOAuth
 scope = "user-library-read user-modify-playback-state user-read-playback-state"
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(scope=scope))
 
-results = sp.current_user_saved_tracks(10, 0)
-for idx, item in enumerate(results['items']):
-    track = item['track']
-    print(idx, track['artists'][0]['name'], " – ", track['name'])
-# sp.volume(100)
-print(sp.devices())
+# results = sp.current_user_saved_tracks(10, 0)
+# for idx, item in enumerate(results['items']):
+#     track = item['track']
+#     print(idx, track['artists'][0]['name'], " – ", track['name'])
+sp.volume(100)
+sp.add_to_queue("4CzhtKifG867Lu5DNQVBSA")
+sp.next_track()
