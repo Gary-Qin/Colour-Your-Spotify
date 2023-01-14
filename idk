@@ -2,47 +2,16 @@
 <html>
 
     <head>
-        
-        <style>
-            body {background-color: powderblue;}
-            h1 {
-                color: blue;
-                font-family: verdana;
-                font-size: 300%;
-            }
-            p {
-                color: red;
-                font-family: verdana;
-                font-size: 160%;
-                border: 2px solid black;
-                padding: 30px;
-            }
-            .button {
-  background-color: #4CAF50;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-}
-        </style>
-        
+        <link rel="stylesheet" href="idk.css">
     </head>
 
     <body>
-        <h1 style="color:rgb(62, 186, 190);">Hi</h1>
+        <h1>Hi</h1>
+        
         <p id="a"> hey </p>
-        <button type="button" onclick="myFunction()">Click Me!</button>
+        <button class="button" onclick="myFunction()">Click Me!</button>
 
-        <script>
-            function myFunction() { 
-                document.getElementById("a").innerHTML = "Hello JavaScript!";
-            }
-        </script>
+        <script src="idk.js"></script>
     </body>
 
 </html>
