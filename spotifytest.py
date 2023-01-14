@@ -15,5 +15,6 @@ sp = spotipy.Spotify(auth_manager=SpotifyOAuth(scope=scope))
 #     track = item['track']
 #     print(idx, track['artists'][0]['name'], " – ", track['name'])
 sp.volume(100)
-sp.add_to_queue("4CzhtKifG867Lu5DNQVBSA")
+sp.add_to_queue("6Hmc5Afutf4hcrjnBYNidS?si=78d5396df4e644d4")
 sp.next_track()
+sp.seek_track(85000)
