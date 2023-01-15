@@ -13,7 +13,7 @@ ct = ColorThief(image_directory)
 colors = {'#1772e0': 'blue', '#36e912': 'green', '#871bbe': 'purple', '#c82323': 'red', '#e9e212': 'yellow'}
 palette = ct.get_palette(color_count=3)
 for i in range(4):    
-    if((colorsys.rgb_to_hls(palette[i][0], palette[i][1], palette[i][2]))[1] > 100):
+    if((colorsys.rgb_to_hls(palette[i][0], palette[i][1], palette[i][2]))[1] > 60):
         dominant_color = palette[i]
         break
 
@@ -29,11 +29,12 @@ tracks = []
 user_info = sp.current_user()
 
 def closest_color(rgb):
+    print(rgb)
     rg = rgb[0]/rgb[1]
     br = rgb[2]/rgb[0]
     gb = rgb[1]/rgb[2]
 
-    if ((rgb[2] < rgb[1]) and (rgb[2] < rgb[0]) and (rg <= 1.5) and (rg >= 0.5)):
+    if ((rgb[2] < rgb[1]) and (rgb[2] < rgb[0]) and (rg <= 1.5) and (rg >= 1)):
         return 'yellow'
     elif ((rgb[1] < rgb[2]) and (rgb[1] < rgb[0]) and (br <= 1.5) and (br >= 0.5)):
         return 'purple/pink'
