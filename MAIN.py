@@ -1,4 +1,3 @@
-import sys
 import spotipy
 import spotipy.util as util
 from spotipy.oauth2 import SpotifyOAuth
@@ -6,7 +5,6 @@ import random
 from colorthief import ColorThief
 import matplotlib.pyplot as plt
 import colorsys
-import webcolors
 
 image_directory = input("Please paste the directory of the image you would like to use: ")
 ct = ColorThief(image_directory)
