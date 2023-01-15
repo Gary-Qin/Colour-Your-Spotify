@@ -21,7 +21,7 @@ def process_image(img_matrix):
     g = []
     b = []
     for row in img_matrix:
-        for temp_r, temp_g, temp_b, temp in row:
+        for temp_r, temp_g, temp_b, in row:
             r.append(temp_r)
             g.append(temp_g)
             b.append(temp_b)
@@ -55,4 +55,4 @@ def process_image(img_matrix):
 
 
 if __name__ == '__main__':
-    process_image(fetch_image('image.png'))
+    process_image(fetch_image('red_test.jpg'))
