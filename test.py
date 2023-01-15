@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import colorsys
 import webcolors
 
-ct = ColorThief("Purple_sample.png")
+ct = ColorThief("Green_sample.png")
 colors = {'#1772e0': 'blue', '#36e912': 'green', '#871bbe': 'purple', '#c82323': 'red', '#e9e212': 'yellow', '#7d7d7d': 'gray'}
 # dominant_color = ct.get_color(quality=1)
 

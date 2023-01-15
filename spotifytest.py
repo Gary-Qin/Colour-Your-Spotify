@@ -10,9 +10,13 @@ import webcolors
 
 image_directory = input("Please paste the directory of the image you would like to use: ")
 ct = ColorThief(image_directory)
-
 colors = {'#1772e0': 'blue', '#36e912': 'green', '#871bbe': 'purple', '#c82323': 'red', '#e9e212': 'yellow'}
-dominant_color = ct.get_color(quality=1)
+palette = ct.get_palette(color_count=3)
+for i in range(4):    
+    if((colorsys.rgb_to_hls(palette[i][0], palette[i][1], palette[i][2]))[1] > 100):
+        dominant_color = palette[i]
+        break
+
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id="3a90ccaaa2ed467ca3446c605016e52b",
                                                client_secret="f07b311374724e16b0629a80aba4bd7b",
                                                redirect_uri="http://localhost:3000",
