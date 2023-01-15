@@ -1,5 +1,6 @@
 angry - red - https://open.spotify.com/playlist/457PRAhJMUXaS8s6Evh6Hd?si=1ed9174c5d254d54
-sad - blue - https://open.spotify.com/playlist/37i9dQZF1DWVV27DiNWxkR?si=577ce2ed756e4ddc
+chill - blue - https://open.spotify.com/playlist/37i9dQZF1DX4wta20PHgwo?si=799ab08e85ae4094
 excited - yellow - https://open.spotify.com/playlist/37i9dQZF1DZ06evO3CRVnO?si=bfa09e761860439f
 happy - green - https://open.spotify.com/playlist/37i9dQZF1DXdPec7aLTmlC?si=c5055c8e13364d7e
-chill - purple - https://open.spotify.com/playlist/37i9dQZF1DX2WkIBRaChxW?si=f5fd0990d75146b3
+smooth - purple - https://open.spotify.com/playlist/37i9dQZF1DX2WkIBRaChxW?si=f5fd0990d75146b3
+sad - gray - https://open.spotify.com/playlist/37i9dQZF1DWVV27DiNWxkR?si=577ce2ed756e4ddc
