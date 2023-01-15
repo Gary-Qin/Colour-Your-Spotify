@@ -29,28 +29,34 @@ tracks = []
 user_info = sp.current_user()
 
 def closest_color(rgb):
-    differences = {}
-    for color_hex, color_name in colors.items():
-        r, g, b = webcolors.hex_to_rgb(color_hex)
-        differences[sum([(r - rgb[0]) ** 2,
-                         (g - rgb[1]) ** 2,
-                         (b - rgb[2]) ** 2])] = color_name
-    return differences[min(differences.keys())]
+    rg = rgb[0]/rgb[1]
+    br = rgb[2]/rgb[0]
+    gb = rgb[1]/rgb[2]
 
-try:
-    cname = webcolors.rgb_to_name(dominant_color)
-    print(f"The dominant color is {cname}")
-except ValueError:
-    cname = closest_color(dominant_color)
-    print(f"The dominant color is most likely {cname}")
+    if ((rgb[2] < rgb[1]) and (rgb[2] < rgb[0]) and (rg <= 1.5) and (rg >= 0.5)):
+        return 'yellow'
+    elif ((rgb[1] < rgb[2]) and (rgb[1] < rgb[0]) and (br <= 1.5) and (br >= 0.5)):
+        return 'purple/pink'
+    elif ((rgb[0] < rgb[2]) and (rgb[0] < rgb[1]) and (gb <= 1.5) and (gb >= 0.5)):
+        return 'aqua/light blue'
+    elif ((rgb[0] > rgb[1]) and (rgb[0] > rgb[2])):
+        return 'red'
+    elif ((rgb[1] > rgb[0]) and (rgb[1] > rgb[2])):
+        return 'green'
+    elif ((rgb[2] > rgb[0]) and (rgb[2] > rgb[1])):
+        return 'dark blue'
 
-if cname == "blue":
+
+cname = closest_color(dominant_color)
+print(f"The dominant color is most likely {cname}")
+
+if cname == "dark blue":
     playlist_id = "https://open.spotify.com/playlist/37i9dQZF1DWVV27DiNWxkR?si=577ce2ed756e4ddc"
     print("The mood of the colour is sad")
 elif cname == "green":
     playlist_id = "https://open.spotify.com/playlist/37i9dQZF1DXdPec7aLTmlC?si=c5055c8e13364d7e"
     print("The mood of the colour is happy")
-elif cname == "purple":
+elif cname == "purple/pink":
     playlist_id = "https://open.spotify.com/playlist/37i9dQZF1DX2WkIBRaChxW?si=f5fd0990d75146b3"
     print("The mood of the colour is smooth")
 elif cname == "red":
@@ -59,6 +65,9 @@ elif cname == "red":
 elif cname == "yellow":
     playlist_id = "https://open.spotify.com/playlist/37i9dQZF1DZ06evO3CRVnO?si=bfa09e761860439f"
     print("The mood of the colour is excited")
+elif cname == "aqua/light blue":
+    playlist_id = 'https://open.spotify.com/playlist/37i9dQZF1DXb3m918yXHxA?si=039c23ba9b6e410d'
+    print("The mood of the colour is beachy/sunny")
 
 
 while True:
