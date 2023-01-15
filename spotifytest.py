@@ -69,8 +69,16 @@ for track in tracks[0]['items']:
 
 song_uri = track_uris[random.randint(0, len(track_uris))]
 
-devices = sp.devices()
-device_list = []
+colour = ["red", "blue", "yellow", "green", "purple"]
+while True:
+    devices = sp.devices()
+    device_list = []
+
+    if (devices['devices'] == []):
+        print("\nYou have no spotify apps open at the moment, please open spotify on one of your devices")
+        input("Once you have opened spotify, press ENTER to retry...")
+    else:
+        break
 
 for index, device in enumerate(devices['devices']):
     device_list.append((device['name'], index, device['type'], device['is_active']))
@@ -82,10 +90,9 @@ for index, device in enumerate(device_list):
         play_device = index
         device_found = True
 
-if (device_found == False):
+if (device_found == False) and (len(device_list) > 1):
 
-    print("\nNone of your device are currently playing music")
-    print("Please select a device to use")
+    print("\nPlease select a device to play music through")
     
     while True:
         print('')
@@ -102,6 +109,10 @@ if (device_found == False):
                 print('Please enter a number listed')
         except ValueError:
             print('Please enter a number listed')
+
+elif (device_found == False):
+    play_device = 0
+        
 
 sp.start_playback(device_id = ((sp.devices()).get('devices')[play_device]).get('id'), context_uri = song_uri)
 
