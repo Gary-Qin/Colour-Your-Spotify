@@ -3,16 +3,16 @@ import matplotlib.pyplot as plt
 import colorsys
 import webcolors
 
-ct = ColorThief("nejat.jpg")
-colors = {'#0000ff': 'blue', '#008000': 'green', '#800080': 'purple', '#ff0000': 'red', '#ffff00': 'yellow', '#7d7d7d': 'gray'}
+ct = ColorThief("greenstuff.png")
+colors = {'#1772e0': 'blue', '#36e912': 'green', '#871bbe': 'purple', '#c82323': 'red', '#e9e212': 'yellow', '#7d7d7d': 'gray'}
 dominant_color = ct.get_color(quality=1)
 
-# # plt.imshow([[dominant_color]])
-# # plt.show()
+plt.imshow([[dominant_color]])
+plt.show()
 
-# palette = ct.get_palette(color_count=5)
-# plt.imshow([[palette[i] for i in range(5)]])
-# plt.show()
+palette = ct.get_palette(color_count=5)
+plt.imshow([[palette[i] for i in range(5)]])
+plt.show()
 
 # for color in palette:
 #     print(color)
@@ -31,10 +31,10 @@ def closest_color(rgb):
 
 try:
     cname = webcolors.rgb_to_name(dominant_color)
-    print(f"The color is exactly {cname}")
+    print(f"The dominant color is {cname}")
 except ValueError:
     cname = closest_color(dominant_color)
-    print(f"The color is closest to {cname}")
+    print(f"The dominant color is most like {cname}")
 
 plt.imshow([[dominant_color]])
 plt.show()
