@@ -41,16 +41,20 @@ except ValueError:
 
 if cname == "blue":
     playlist_id = "https://open.spotify.com/playlist/37i9dQZF1DWVV27DiNWxkR?si=577ce2ed756e4ddc"
+    print("The mood of the colour is sad")
 elif cname == "green":
     playlist_id = "https://open.spotify.com/playlist/37i9dQZF1DXdPec7aLTmlC?si=c5055c8e13364d7e"
+    print("The mood of the colour is happy")
 elif cname == "purple":
     playlist_id = "https://open.spotify.com/playlist/37i9dQZF1DX2WkIBRaChxW?si=f5fd0990d75146b3"
+    print("The mood of the colour is smooth")
 elif cname == "red":
     playlist_id = "https://open.spotify.com/playlist/457PRAhJMUXaS8s6Evh6Hd?si=1ed9174c5d254d54"
+    print("The mood of the colour is angry")
 elif cname == "yellow":
     playlist_id = "https://open.spotify.com/playlist/37i9dQZF1DZ06evO3CRVnO?si=bfa09e761860439f"
+    print("The mood of the colour is excited")
 
-print(playlist_id)
 
 while True:
     temp_tracks = sp.playlist_items(playlist_id, limit = 100, offset = offset)
