@@ -69,7 +69,6 @@ for track in tracks[0]['items']:
 
 song_uri = track_uris[random.randint(0, len(track_uris))]
 
-colour = ["red", "blue", "yellow", "green", "purple"]
 while True:
     devices = sp.devices()
     device_list = []
