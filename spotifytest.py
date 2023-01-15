@@ -8,8 +8,9 @@ import matplotlib.pyplot as plt
 import colorsys
 import webcolors
 
+image_directory = input("Please paste the directory of the image you would like to use: ")
+ct = ColorThief(image_directory)
 
-ct = ColorThief("nejat.jpg")
 colors = {'#1772e0': 'blue', '#36e912': 'green', '#871bbe': 'purple', '#c82323': 'red', '#e9e212': 'yellow'}
 dominant_color = ct.get_color(quality=1)
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id="3a90ccaaa2ed467ca3446c605016e52b",
@@ -37,7 +38,7 @@ try:
     print(f"The dominant color is {cname}")
 except ValueError:
     cname = closest_color(dominant_color)
-    print(f"The dominant color is most like {cname}")
+    print(f"The dominant color is most likely {cname}")
 
 if cname == "blue":
     playlist_id = "https://open.spotify.com/playlist/37i9dQZF1DWVV27DiNWxkR?si=577ce2ed756e4ddc"
