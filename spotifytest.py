@@ -3,10 +3,6 @@ import spotipy
 import spotipy.util as util
 from spotipy.oauth2 import SpotifyOAuth
 
-# $env:SPOTIPY_CLIENT_ID='94999ad051a24821989fc2b351ece004'
-# $env:SPOTIPY_CLIENT_SECRET='a642a27e5fd04cbe80e6512c41ae804a'
-# $env:SPOTIPY_REDIRECT_URI='http://google.com/'
-
 scope = "user-library-read user-modify-playback-state user-read-playback-state"
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id="94999ad051a24821989fc2b351ece004",
                                                client_secret="a642a27e5fd04cbe80e6512c41ae804a",
