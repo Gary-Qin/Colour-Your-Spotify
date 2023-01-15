@@ -3,22 +3,28 @@ import matplotlib.pyplot as plt
 import colorsys
 import webcolors
 
-ct = ColorThief("nejat.jpg")
+ct = ColorThief("Purple_sample.png")
 colors = {'#1772e0': 'blue', '#36e912': 'green', '#871bbe': 'purple', '#c82323': 'red', '#e9e212': 'yellow', '#7d7d7d': 'gray'}
 # dominant_color = ct.get_color(quality=1)
 
 # plt.imshow([[dominant_color]])
 # plt.show()
 
-palette = ct.get_palette(color_count=5)
-plt.imshow([[palette[i] for i in range(5)]])
+palette = ct.get_palette(color_count=3)
+plt.imshow([[palette[i] for i in range(3)]])
 plt.show()
 
 for color in palette:
     print(color)
-    print(f"#{color[0]:02x}{color[1]:02x}{color[2]:02x}")
-    print(colorsys.rgb_to_hsv(*color))
     print(colorsys.rgb_to_hls(*color))
+    print("")
+
+for i in range(4):    
+    if((colorsys.rgb_to_hls(palette[i][0], palette[i][1], palette[i][2]))[1] > 90):
+        dominant_color = palette[i]
+        break
+
+print(dominant_color)
 
 # def closest_color(rgb):
 #     differences = {}
