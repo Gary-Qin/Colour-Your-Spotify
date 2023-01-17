@@ -23,7 +23,7 @@ sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id="3a90ccaaa2ed467ca3446c
 playlist_id = ''
 offset = 0
 tracks = []
-
+#RIP to https://play.spotify.com/track/123/ PLAYBOICARTIPLAYBOICARTIPLAYBOICARTIPLAYBOICARTI
 user_info = sp.current_user()
 
 def closest_color(rgb):
