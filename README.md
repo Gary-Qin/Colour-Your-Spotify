@@ -1,5 +1,5 @@
-# team-friendship
-Color Your Spotify
+# colour-your-spotify
+Colour Your Spotify
 
 Required Libraries:
 -spotipy
